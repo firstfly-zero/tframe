@@ -75,27 +75,27 @@ WSGI_APPLICATION = 'tframe.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tframe',
-        'USER': 'root',
-        'PASSWORD': 'haodf666',
-        'HOST': '192.168.199.142',
-        'PORT': '3306',
-        'OPTIONS': {
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-            "charset": "utf8mb4",
-        },
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'tframe',
+    #     'USER': 'root',
+    #     'PASSWORD': 'haodf666',
+    #     'HOST': '192.168.199.142',
+    #     'PORT': '3306',
+    #     'OPTIONS': {
+    #         "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+    #         "charset": "utf8mb4",
+    #     },
+    # },
 }
 
-DATABASE_APP_MAPPING={
-    'auth':'default',
-    'contenttypes':'default',
-    'session':'default',
-    'admin':'default',
-    'regs':'default',
-}
+# DATABASE_APP_MAPPING={
+#     'auth':'default',
+#     'contenttypes':'default',
+#     'session':'default',
+#     'admin':'default',
+#     'regs':'default',
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -134,3 +134,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=(
+	os.path.join(BASE_DIR,"static"),
+)
