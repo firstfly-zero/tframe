@@ -1,5 +1,5 @@
 from django.urls import path,include
-from re_cases import views
+from re_cases.views import views
 urlpatterns = [
     # 父级路由 recases
     # 页面路由
@@ -9,4 +9,5 @@ urlpatterns = [
     # 功能路由
     path('getcases',views.get_recases),
     path('getuitasks',views.get_uitasks),
+    path('addcases', views.add_recases),
 ]

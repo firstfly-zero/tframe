@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    're_cases',
 ]
 
 MIDDLEWARE = [
@@ -75,18 +76,18 @@ WSGI_APPLICATION = 'tframe.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'tframe',
-    #     'USER': 'root',
-    #     'PASSWORD': 'haodf666',
-    #     'HOST': '192.168.199.142',
-    #     'PORT': '3306',
-    #     'OPTIONS': {
-    #         "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-    #         "charset": "utf8mb4",
-    #     },
-    # },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tframe',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': '10.227.2.149',
+        'PORT': '3306',
+        'OPTIONS': {
+            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+            "charset": "utf8mb4",
+        },
+    },
 }
 
 # DATABASE_APP_MAPPING={
@@ -137,3 +138,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=(
 	os.path.join(BASE_DIR,"static"),
 )
+
+# 设置日志输出
+BASE_LOG_DIR = os.path.join(BASE_DIR, "log")

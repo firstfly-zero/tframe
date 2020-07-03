@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from django.views.decorators.clickjacking import xframe_options_exempt
 from re_cases import utils
+from re_cases import models
 import random
 # Create your views here.
+# 凡是返回页面的方法，都需要以page_开头
 def page_index(request):
     return render(request, "re_cases/index.html")
 @xframe_options_exempt
@@ -12,6 +14,14 @@ def page_uitask(request):
 @xframe_options_exempt
 def page_console(request):
     return render(request, "re_cases/console.html")
+def add_recases(request):
+    regresscase = models.RegressionCase()
+    regresscase.auto_relations = "aaaa"
+    regresscase.save()
+    return HttpResponse("success")
+
+
+
 cases = {
     str(random.randint(0, 100)): {
         "前置条件": utils.get_hans(random.randint(1, 100)),
